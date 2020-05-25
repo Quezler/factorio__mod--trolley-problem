@@ -1,0 +1,9 @@
+{
+  "name": "Trolley_Problem",
+  "version": "1.0.0",
+  "factorio_version": "0.18",
+  "title": "Trolley Problem",
+  "author": "Quezler",
+  "dependencies": ["base"],
+  "description": "Whistle while standing on the track to summon your train <3"
+}
