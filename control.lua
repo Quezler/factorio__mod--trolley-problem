@@ -18,13 +18,13 @@ script.on_event(defines.events.on_lua_shortcut,
                             end
 
                             local record = {}
+                            record.temporary = true;
                             record.rail = get_track_below_player(player)
                             record.wait_conditions = {
                                 {compare_type="or", type = "inactivity", ticks = 60 * 15},
                                 {compare_type="or", type = "inactivity", ticks = 60 *  5},
                                 {compare_type="and", type = "passenger_present"},
                             }
-                            record.temporary = true;
 
                             table.insert(schedule.records, 1, record)
                             train.schedule = schedule;
