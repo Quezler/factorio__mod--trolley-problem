@@ -4,7 +4,7 @@ script.on_event(defines.events.on_lua_shortcut,
                 local player = game.get_player(event.player_index)
                 local called = 0
 
-                for i, train in pairs(player.surface.get_trains(player.force)) do
+                for _, train in pairs(player.surface.get_trains(player.force)) do
 
                     if train_matches_player(train, player) then
                         if has_track_below_player(player)  then
@@ -46,8 +46,8 @@ script.on_event(defines.events.on_lua_shortcut,
 )
 
 function train_matches_player(train, player)
-    for i, movers in pairs(train.locomotives) do
-        for i, locomotive in pairs(movers) do
+    for _, movers in pairs(train.locomotives) do
+        for _, locomotive in pairs(movers) do
             if(identical_color(player.color, locomotive.color)) then
                 return true
             end
