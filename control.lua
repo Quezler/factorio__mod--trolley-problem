@@ -15,6 +15,11 @@ script.on_event(defines.events.on_lua_shortcut,
 
                             if(train.schedule) then
                                 schedule = train.schedule;
+
+                                -- remove any existing temporary station @ top
+                                if(schedule.records[1].temporary == true) then
+                                    table.remove(schedule.records, 1)
+                                end
                             end
 
                             local record = {}
