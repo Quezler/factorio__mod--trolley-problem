@@ -48,8 +48,10 @@ script.on_event(defines.events.on_lua_shortcut,
 function train_matches_player(train, player)
     for _, movers in pairs(train.locomotives) do
         for _, locomotive in pairs(movers) do
-            if(identical_color(player.color, locomotive.color)) then
-                return true
+            if(locomotive.color) then -- locomotive color isn't required
+                if(identical_color(player.color, locomotive.color)) then
+                    return true
+                end
             end
         end
     end
